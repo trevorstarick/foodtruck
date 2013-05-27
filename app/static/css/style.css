@@ -1,0 +1,10 @@
+body {
+	padding-top:60px;
+}
+#footer {
+	text-align: center;
+	font-size: small;
+}
+.navbar-inverse .navbar-link {
+	color: #0088cc;
+}
