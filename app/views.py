@@ -15,9 +15,10 @@ def register():
 	return render_template("index.html",
 		title = 'Home')
 @app.route('/user/<username>')
-def user_username():
-	return render_template("index.html",
-		title = 'Home')
+def user_username(username):
+	return render_template("user.html",
+		title = username,
+		username = username)
 
 @app.route('/loggedin/<username>')
 def loggedin_user(username):
