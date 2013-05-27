@@ -7,17 +7,23 @@ def index():
 	return render_template("index.html",
 		title = 'Home')
 @app.route('/login')
-def index():
+def login():
 	return render_template("index.html",
 		title = 'Home')
 @app.route('/register')
-def index():
+def register():
 	return render_template("index.html",
 		title = 'Home')
-@app.route('/user/{{username}}')
-def index():
+@app.route('/user/<username>')
+def user_username():
 	return render_template("index.html",
 		title = 'Home')
+
+@app.route('/loggedin/<username>')
+def loggedin_user(username):
+	return render_template("index.html",
+		title = 'Home',
+		username = username)
 
 @app.errorhandler(404)
 def fourohfour(e):
