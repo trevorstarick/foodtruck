@@ -36,7 +36,3 @@ nosetests.xml
 
 # OS X
 .DS_Store
-
-# Flask
-flask/
-virtenv.py
