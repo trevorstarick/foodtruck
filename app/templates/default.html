@@ -16,33 +16,34 @@
     	{% block head %}{% endblock %}
 	</head>
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="/">mtlFoodtruck</a>
-					{% if username %}
-					<p class="navbar-text pull-right">
-		              Logged in as <a href="/user/{{username}}" class="navbar-link">{{username}}</a>
-		            {% else %}
-		            <p class="navbar-text pull-right">
-		              <a href="/login" class="navbar-link">Login</a> | <a href="/register" class="navbar-link">Register</a>
-		            {% endif %}
-		            </p>
-					<ul class="nav">
-						<li><a href="/">Home</a></li>
-						<li><a href="/foodtruck">Foodtrucks</a></li>
-	            	</ul>
-	            </div>
-            </div>
-        </div>
-		<div class="container">
-		{% block content %}{% endblock %}
-			<hr />
-			<div id="footer">
-				<h5><a href="http://builtinmtl.com/">Made with <span> &hearts; </span> in Montréal</a></h5>
-			<p>Coded by <a href="http://starick.me">@trevorstarick</a> and Designed by <a href="#kylegill">Kyle Gill</a></p>
+		<div id="wrap">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="brand" href="/">mtlFoodtruck</a>
+						{% if username %}
+							<p class="navbar-text pull-right">Logged in as <a href="/user/{{username}}" class="navbar-link">{{username}}</a>
+						{% else %}
+							<p class="navbar-text pull-right">
+							<a href="/login" class="navbar-link">Login</a> | <a href="/register" class="navbar-link">Register</a></p>
+						{% endif %}
+						<ul class="nav">
+							<li><a href="/">Home</a></li>
+							<li><a href="/foodtruck">Foodtrucks</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-    	</div>
-    {% block closingJS %}{% endblock %}
+			<div class="container">
+				{% block content %}{% endblock %}
+			</div>
+			<div id="push"></div>
+		</div>
+		<div id="footer">
+			<hr />
+			<h5><a href="http://builtinmtl.com/">Made with <span> &hearts; </span> in Montréal</a></h5>
+			<p>Coded by <a href="http://starick.me">@trevorstarick</a> and Designed by <a href="#kylegill">Kyle Gill</a></p>
+</div>
+{% block closingJS %}{% endblock %}
 	</body>
 </html>

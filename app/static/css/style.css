@@ -1,9 +1,13 @@
+html,body {
+	height: 100%;
+}
 body {
 	padding-top:60px;
 }
 #footer {
 	text-align: center;
 	font-size: small;
+	height: 100px;
 }
 .navbar-inverse .navbar-link {
 	color: #0088cc;
@@ -12,4 +16,21 @@ body {
   display: inline-block;
   color: #f03;
   font-size: 190%;
+}
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -100px;
+}
+#push {
+	height: 100px;
+}
+@media (max-width: 767px) {
+    #footer {
+      	margin-left: -20px;
+      	margin-right: -20px;
+     	padding-left: 20px;
+    	padding-right: 20px;
+    }
 }
