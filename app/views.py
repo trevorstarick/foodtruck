@@ -6,6 +6,18 @@ from app import app
 def index():
 	return render_template("index.html",
 		title = 'Home')
+@app.route('/login')
+def index():
+	return render_template("index.html",
+		title = 'Home')
+@app.route('/register')
+def index():
+	return render_template("index.html",
+		title = 'Home')
+@app.route('/user/{{username}}')
+def index():
+	return render_template("index.html",
+		title = 'Home')
 
 @app.errorhandler(404)
 def fourohfour(e):

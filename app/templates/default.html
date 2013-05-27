@@ -20,8 +20,13 @@
 			<div class="navbar-inner">
 				<div class="container">
 					<a class="brand" href="/">mtlFoodtruck</a>
+					{% if username %}
 					<p class="navbar-text pull-right">
-		              Logged in as <a href="#" class="navbar-link">Username</a>
+		              Logged in as <a href="/user/{{username}}" class="navbar-link">{{username}}</a>
+		            {% else %}
+		            <p class="navbar-text pull-right">
+		              <a href="/login" class="navbar-link">Login</a> | <a href="/register" class="navbar-link">Register</a>
+		            {% endif %}
 		            </p>
 					<ul class="nav">
 						<li><a href="/">Home</a></li>
@@ -34,7 +39,8 @@
 		{% block content %}{% endblock %}
 			<hr />
 			<div id="footer">
-			Coded by <a href="http://starick.me">@trevorstarick</a> and Designed by <a href="#kylegill">Kyle Gill</a>
+				<h5><a href="http://builtinmtl.com/">Made with <span> &hearts; </span> in Montréal</a></h5>
+			<p>Coded by <a href="http://starick.me">@trevorstarick</a> and Designed by <a href="#kylegill">Kyle Gill</a></p>
 			</div>
     	</div>
     {% block closingJS %}{% endblock %}

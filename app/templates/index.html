@@ -2,6 +2,8 @@
 
 {% block head %}
 <link href="{{ url_for('.static', filename = 'css/leaflet.css') }}" rel="stylesheet">
+<link href="{{ url_for('.static', filename = 'css/MarkerCluster.css') }}" rel="stylesheet">
+<link href="{{ url_for('.static', filename = 'css/MarkerCluster.Default.css') }}" rel="stylesheet">
 {% endblock %}
 -------------------
 {% block content %}
@@ -17,12 +19,25 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 ---------------------
 {% block closingJS %}
 <script src="{{ url_for('.static', filename = 'js/leaflet.js') }}"></script>
+<script src="{{ url_for('.static', filename = 'js/leaflet.markercluster.js') }}"></script>
 <script>
 	var map = new L.Map('map');
-	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-	var osmAttrib='Map data &copy; OpenStreetMap contributors';
-	var osm = new L.TileLayer(osmUrl, {minZoom: 11, attribution: osmAttrib});		
+	var osmUrl='http://dnv9my2eseobd.cloudfront.net/v3/foursquare.map-0y1jh28j/{z}/{x}/{y}.png';
+	var osm = new L.TileLayer(osmUrl, {minZoom: 11});
 	map.setView(new L.LatLng(45.5091, -73.5620),13);
 	map.addLayer(osm);
+	var markers = new L.MarkerClusterGroup({maxClusterRadius:20});
+	map.addLayer(markers);
+</script>
+<script>
+markers.addLayer(new L.Marker(new L.LatLng(45.502715,-73.575847, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.504542,-73.584409, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.513835,-73.584344, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.504054,-73.573401, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.499218,-73.56956, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.496237,-73.565231, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.501534,-73.561975, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.496101,-73.552968, "")));
+markers.addLayer(new L.Marker(new L.LatLng(45.515369,-73.55999, "")));
 </script>
 {% endblock %}

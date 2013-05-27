@@ -8,3 +8,8 @@ body {
 .navbar-inverse .navbar-link {
 	color: #0088cc;
 }
+#footer span {
+  display: inline-block;
+  color: #f03;
+  font-size: 190%;
+}
